@@ -77,4 +77,8 @@ export class RecipeEditComponent implements OnInit {
         Validators.pattern(/^[1-9]+\d*$/)])
     }));
   }
+
+  deleteIngredient(index: number) {
+    (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
+  }
 }

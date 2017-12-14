@@ -17,19 +17,26 @@
                 <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown" appDropdown>
-                    <a class="dropdown-toggle" role="button">Manage
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a>Save Data</a>
-                        </li>
-                        <li>
-                            <a>Fetch Data</a>
-                        </li>
-                    </ul>
-                </li>
+                <ng-template [ngIf]="!authService.isAuthenticated()">
+                    <li><a routerLink="/signup">Register</a></li>
+                    <li><a routerLink="/signin">Login</a></li>
+                </ng-template>
+                <ng-template [ngIf]="authService.isAuthenticated()">
+                    <li><a (click)="logout()">Logout</a></li>
+                    <li class="dropdown" appDropdown>
+                        <a class="dropdown-toggle" role="button">Manage
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a (click)="saveData()">Save Data</a>
+                            </li>
+                            <li>
+                                <a (click)="fetchData()">Fetch Data</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ng-template>
             </ul>
         </div>
     </div>
