@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { DropdownDirective } from './dropdown.directive';
-import { CommonModule } from '@angular/common/src/common_module';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
-    exports: [
-        CommonModule,
+    declarations: [
         DropdownDirective
     ],
-    declarations: [
+    exports: [
+        CommonModule,
         DropdownDirective
     ]
 })
