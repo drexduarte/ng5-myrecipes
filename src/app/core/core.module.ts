@@ -9,7 +9,6 @@ import { AuthGuard } from '../auth/auth-guard.service';
 import { AuthService } from '../auth/auth.service';
 import { DataStorageService } from '../shared/data-storage.service';
 import { RecipeService } from '../recipes/recipe.service';
-import { ShoppingListService } from '../shared/shopping-list.service';
 import { AuthInterceptor } from '../shared/auth.interceptor';
 
 @NgModule({
@@ -26,7 +25,6 @@ import { AuthInterceptor } from '../shared/auth.interceptor';
         HomeComponent
     ],
     providers: [
-        ShoppingListService,
         RecipeService,
         DataStorageService,
         AuthService,

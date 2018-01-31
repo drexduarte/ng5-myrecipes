@@ -7,7 +7,7 @@ import { HomeComponent } from './core/home/home.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule', canLoad: [AuthGuard] },
+  { path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule' },
   { path: 'shopping-list', component: ShoppingListComponent, canActivate: [AuthGuard] }
 ];
 
