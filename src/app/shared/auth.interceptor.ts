@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import 'rxjs/add/operator/switchMap';
 
 import * as fromApp from '../store/app.reducers';
 import * as fromAuth from '../auth/store/auth.reducers';
