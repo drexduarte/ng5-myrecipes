@@ -24,7 +24,7 @@ import './shared/rxjs.imports';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'my-universal-app' }),
     HttpClientModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
